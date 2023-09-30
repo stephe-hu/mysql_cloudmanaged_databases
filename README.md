@@ -5,7 +5,7 @@
 2. Click on `'Select a project` in the upper left side of the screen and click on `New Project`. Fill in the information and click `Create`.
 3. In the navigation menu on the left side of the screen, click on `SQL`.
 4. Click on `Create Instance`. Choose `MySQL` and click `Next`, and then `Enable API`.
-5. When creating the MySQL instance, create a password for the `root` user. Then changed the configuration options. Click `Create` to start the deployment.
+5. When creating the MySQL instance, create a password for the `root` user. Then change the default configuration options to `MySQL 8`, `Enterprise`, `Sandbox`, `and Shared core 1vCPU/.614gb RAM`. Click `Create` to start the deployment.
 6. Once the instance is created, open `MySQL Workbench` and create a new connection. Use the IP address of the instance as the hostname, and use the `root` user and password created earlier. the IP address can be found in the `Overview` tab of the instance. Click `OK` to connect.
 
 ## Azure Setup Process
