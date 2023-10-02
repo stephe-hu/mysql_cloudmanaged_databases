@@ -1,8 +1,9 @@
 import os
 from dotenv import load_dotenv
-from pandas import read_sql
+from pandas import read_sql, DataFrame
 from sqlalchemy import create_engine, inspect
 
+from populate import insert_fake_data
 
 # Load environment variables from .env file
 load_dotenv() 
@@ -39,6 +40,13 @@ def execute_query_to_dataframe(query: str, engine):
 tables = get_tables(db_engine)
 print("Tables in the database:", tables)
 
-sql_query = "SELECT * FROM your_table_name"  # Modify as per your table
-df = execute_query_to_dataframe(sql_query, db_engine)
-print(df)
+# Call the insert_fake_data function to populate the database with fake data
+insert_fake_data(db_engine)
+
+# Retrieve data from the 'providers' table
+sql_query_providers = "SELECT * FROM patients"  # Modify as per your table
+providers_df = execute_query_to_dataframe(sql_query_providers, db_engine)
+
+# Print the DataFrame
+print("Data from 'providers' table:")
+print(providers_df)
